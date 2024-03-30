@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj6nq4xk1n7fe"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_m387k"]
+[ext_resource type="PackedScene" uid="uid://7rn131ihlkkv" path="res://brick.tscn" id="1_pn8ra"]
+[ext_resource type="PackedScene" uid="uid://45fruaqy1u6a" path="res://ball.tscn" id="1_q37dh"]
+[ext_resource type="PackedScene" uid="uid://ninor6rfhl1y" path="res://paddle.tscn" id="2_6i2m4"]
+[ext_resource type="PackedScene" uid="uid://dcfw0i0ug11yc" path="res://wall.tscn" id="5_fv0fe"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_m387k")
+
+[node name="Paddle" parent="." instance=ExtResource("2_6i2m4")]
+position = Vector2(561, 571)
+
+[node name="Ball" parent="." instance=ExtResource("1_q37dh")]
+position = Vector2(594, 520)
+
+[node name="Rows" type="Node2D" parent="."]
+
+[node name="Brick" parent="Rows" instance=ExtResource("1_pn8ra")]
+position = Vector2(96, 28)
+
+[node name="Brick2" parent="Rows" instance=ExtResource("1_pn8ra")]
+position = Vector2(233, 28)
+
+[node name="Brick3" parent="Rows" instance=ExtResource("1_pn8ra")]
+position = Vector2(371, 28)
+
+[node name="Brick4" parent="Rows" instance=ExtResource("1_pn8ra")]
+position = Vector2(508, 28)
+
+[node name="Brick5" parent="Rows" instance=ExtResource("1_pn8ra")]
+position = Vector2(646, 28)
+
+[node name="Brick6" parent="Rows" instance=ExtResource("1_pn8ra")]
+position = Vector2(783, 28)
+
+[node name="Brick7" parent="Rows" instance=ExtResource("1_pn8ra")]
+position = Vector2(921, 28)
+
+[node name="Brick8" parent="Rows" instance=ExtResource("1_pn8ra")]
+position = Vector2(1058, 28)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall3" parent="Walls" instance=ExtResource("5_fv0fe")]
+position = Vector2(-15, 330)
+
+[node name="Wall" parent="Walls" instance=ExtResource("5_fv0fe")]
+position = Vector2(1170, 371)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("5_fv0fe")]
+position = Vector2(1170, 136)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("5_fv0fe")]
+position = Vector2(1170, 605)
+
+[node name="Wall5" parent="Walls" instance=ExtResource("5_fv0fe")]
+position = Vector2(-15, 111)
+rotation = -3.14159
+
+[node name="Wall6" parent="Walls" instance=ExtResource("5_fv0fe")]
+position = Vector2(-16, 547)
+rotation = -3.14159
+
+[node name="HUD" type="CanvasLayer" parent="."]
