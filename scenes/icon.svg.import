@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d06qtkix4sbgv"
-path="res://.godot/imported/basics_wall(brick2).png-342e24c62fcbd1b2e1bb0807bf9cf41b.ctex"
+uid="uid://bnisq6xfbfnua"
+path="res://.godot/imported/icon.svg-3175ba368487e4ef6cc399687003abda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://basics_wall(brick2).png"
-dest_files=["res://.godot/imported/basics_wall(brick2).png-342e24c62fcbd1b2e1bb0807bf9cf41b.ctex"]
+source_file="res://scenes/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-3175ba368487e4ef6cc399687003abda.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
