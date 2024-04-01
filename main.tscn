@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj6nq4xk1n7fe"]
+[gd_scene load_steps=6 format=3 uid="uid://bj6nq4xk1n7fe"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_m387k"]
 [ext_resource type="PackedScene" uid="uid://ninor6rfhl1y" path="res://scenes/paddle.tscn" id="2_6i2m4"]
 [ext_resource type="PackedScene" uid="uid://dcfw0i0ug11yc" path="res://scenes/wall.tscn" id="5_fv0fe"]
 [ext_resource type="PackedScene" uid="uid://c2msteevawecd" path="res://scenes/hud.tscn" id="6_8ntav"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_75lrg"]
+a = Vector2(-574, 24)
+b = Vector2(561, 25)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_m387k")
@@ -45,4 +49,19 @@ rotation = -3.14159
 
 [node name="HUD" parent="." instance=ExtResource("6_8ntav")]
 
+[node name="VictoryLine" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryLine"]
+position = Vector2(575, -60)
+shape = SubResource("SegmentShape2D_75lrg")
+
+[node name="GameOverLine" type="Area2D" parent="."]
+position = Vector2(1, 672)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverLine"]
+position = Vector2(571, -4)
+shape = SubResource("SegmentShape2D_75lrg")
+
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="body_entered" from="VictoryLine" to="." method="_on_victory_line_body_entered"]
+[connection signal="body_entered" from="GameOverLine" to="." method="_on_game_over_line_body_entered"]

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var speed = 400
-var spin_factor = 0.5;
+var speed = 450
+var spin_factor = 0.25;
 
 func start(_position, _rotation):
 	rotation_degrees = _rotation
@@ -13,6 +13,8 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		spin_factor *= -1;
-		velocity = velocity.bounce(collision.get_normal())
+		var speedMod = 1;
 		if collision.get_collider().has_method("hit"):
-			collision.get_collider().hit()
+			speedMod = collision.get_collider().hit()
+			
+		velocity = velocity.bounce(collision.get_normal()) * speedMod;

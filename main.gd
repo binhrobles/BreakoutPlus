@@ -21,3 +21,10 @@ func new_game():
 	
 func _ready():
 	pass;
+
+func _on_victory_line_body_entered(body):
+	print(body);
+	$HUD.game_over("Victory!")
+
+func _on_game_over_line_body_entered(body):
+	$HUD.game_over("~Game over~")
